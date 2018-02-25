@@ -7,7 +7,6 @@ import com.udacity.sandwichclub.model.Sandwich;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class JsonUtils {
             //for name
             JSONObject name =reader.getJSONObject("name");
             //main name
-            String mainName = name.getString("mainNAme");
+            String mainName = name.getString("mainName");
             //aka
             JSONArray aka = name.getJSONArray("alsoKnownAs");
             List<String> akaList = new ArrayList<>();

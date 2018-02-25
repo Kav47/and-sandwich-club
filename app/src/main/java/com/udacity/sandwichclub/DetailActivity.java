@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -43,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        populateUI();
+        populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
@@ -56,7 +57,53 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
+    private void populateUI(Sandwich sandwich) {
+        //Initialization
+        TextView mOriginTextView = findViewById(R.id.origin_tv);
+        TextView mDescriptionTextView = findViewById(R.id.description_tv);
+        TextView mIngredientsTextView = findViewById(R.id.ingredients_tv);
+        TextView mAkaTextView= findViewById(R.id.also_known_tv);
+
+        //fetch place of origin
+        if(!(sandwich.getPlaceOfOrigin().isEmpty())){
+            mOriginTextView.setText(sandwich.getPlaceOfOrigin());
+        }else{
+            mOriginTextView.setText(R.string.unknown_error_message);
+        }
+
+        //fetch description
+        if(!(sandwich.getDescription().isEmpty())){
+            mDescriptionTextView.setText(sandwich.getDescription());
+        }else{
+            mDescriptionTextView.setText(R.string.unknown_error_message);
+        }
+
+        //fetch Ingredients
+        if(sandwich.getIngredients().size() > 0){
+            StringBuilder builder = new StringBuilder();
+            for(String ingredient: sandwich.getIngredients()){
+                builder.append(ingredient).append(", ");
+            }
+            //removes COMMA and SPACE
+            builder.setLength(builder.length() -2);
+            mIngredientsTextView.setText(builder);
+        }else{
+            mIngredientsTextView.setText(R.string.unknown_error_message);
+        }
+
+        //fetch aka
+        if(sandwich.getAlsoKnownAs().size()>0){
+            StringBuilder builder = new StringBuilder();
+            for(String s: sandwich.getAlsoKnownAs()){
+                //add COMMA and SPACE
+                builder.append(s).append(", ");
+            }
+            //removes COMMA and SPACE
+            builder.setLength(builder.length() -2);
+            mAkaTextView.setText(builder);
+        }else{
+            mAkaTextView.setText(R.string.unknown_error_message);
+        }
 
     }
 }
