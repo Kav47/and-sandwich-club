@@ -30,8 +30,8 @@ public class JsonUtils {
             //aka
             JSONArray aka = name.getJSONArray("alsoKnownAs");
             List<String> akaList = new ArrayList<>();
-            for(String obj: akaList){
-                akaList.add(obj);
+            for(int i =0; i <aka.length(); i++){
+                akaList.add(aka.getString(i));
             }
             //place of origin
             String placeOfOrigin = reader.getString("placeOfOrigin");
@@ -42,8 +42,8 @@ public class JsonUtils {
             //ingredients
             JSONArray ingredients = reader.getJSONArray("ingredients");
             List<String> ingredientsList = new ArrayList<>();
-            for(String s: ingredientsList){
-                ingredientsList.add(s);
+            for(int i =0; i<ingredients.length(); i++){
+                ingredientsList.add(ingredients.getString(i));
             }
 
             //return

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <!-- Image -->
         <ImageView
             android:id="@+id/image_iv"
             android:layout_width="match_parent"
@@ -17,50 +17,65 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/sandwich_picture_content_description"
             android:scaleType="centerCrop" />
-
+        <!-- Origin -->
         <TextView
-            android:id="@+id/origin_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_also_known_as_label"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_ingredients_label"
-            android:textStyle="bold" />
-
-        <TextView
+            android:textColor="#4286f4"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_place_of_origin_label"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/description_tv"
+            android:id="@+id/origin_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="17sp"/>
+
+        <!-- Ingredients -->
+        <TextView
+            android:textColor="#4286f4"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_ingredients_label"
+            android:textStyle="bold" />
 
         <TextView
+            android:textSize="17sp"
             android:id="@+id/ingredients_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- AKA -->
         <TextView
+            android:textColor="#4286f4"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textSize="17sp"
             android:id="@+id/also_known_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Description -->
         <TextView
+            android:textColor="#4286f4"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_description_label"
             android:textStyle="bold" />
+
+        <TextView
+            android:textSize="17sp"
+            android:id="@+id/description_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
 
